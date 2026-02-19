@@ -47,19 +47,18 @@ export default function Footer() {
           <Col lg={3} md={4}>
             <h5>Ministries</h5>
             <ul className="footer-links">
-              <li><Link to="/ministries">Discoveryland Kids Church</Link></li>
-              <li><Link to="/ministries">Community Groups</Link></li>
-              <li><Link to="/ministries">Junior &amp; Senior Youth</Link></li>
-              <li><Link to="/ministries">Ladies Connect</Link></li>
-              <li><Link to="/ministries">Sonrise Servants</Link></li>
+              <li><Link to="/ministries">Sunday School</Link></li>
+              <li><Link to="/ministries">Gospel Meetings</Link></li>
+              <li><Link to="/ministries">Bible Study & Prayer</Link></li>
+              <li><Link to="/ministries">Missionary Support</Link></li>
             </ul>
           </Col>
           <Col lg={3} md={4}>
             <h5>Service Times</h5>
             <ul className="footer-links">
-              <li><span>Prayer Time: {settings?.prayerTime || '8:45 AM'}</span></li>
-              <li><span>Worship Service: {settings?.worshipService || '9:30 AM'}</span></li>
-              <li><span>Kids Church: {settings?.kidsChurch || '9:30 AM (Sept – June)'}</span></li>
+              <li><span>Breaking of Bread: {settings?.sundayBreakingOfBread || '10:00 AM'}</span></li>
+              <li><span>Bible Teaching: {settings?.sundayBibleTeaching || '11:30 AM'}</span></li>
+              <li><span>Gospel Hour: {settings?.sundayGospelHour || '7:00 PM'}</span></li>
             </ul>
             <h5 className="mt-3">Contact</h5>
             <ul className="footer-links">

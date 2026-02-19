@@ -37,9 +37,9 @@ export default function Home() {
   const ministryIcons = [<BsStar />, <BsPeople />, <BsHeart />, <BsPeople />]
 
   const serviceTimes = settings ? [
-    { icon: <BsHeart />, label: 'Prayer Time', value: settings.prayerTime || '8:45 AM' },
-    { icon: <BsMusicNote />, label: 'Worship Service', value: settings.worshipService || '9:30 AM' },
-    { icon: <BsStar />, label: 'Discoveryland Kids Church', value: settings.kidsChurch || '9:30 AM (Sept – June)' },
+    { icon: <BsHeart />, label: 'Breaking of Bread', value: settings.sundayBreakingOfBread || '10:00 AM' },
+    { icon: <BsMusicNote />, label: 'Bible Teaching & Sunday School', value: settings.sundayBibleTeaching || '11:30 AM' },
+    { icon: <BsStar />, label: 'Gospel Hour', value: settings.sundayGospelHour || '7:00 PM' },
   ] : []
 
   return (
