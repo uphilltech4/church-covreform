@@ -8,7 +8,7 @@ export default function Navbar() {
       <Container>
         <BSNavbar.Brand as={Link} to="/">
           <span className="brand-icon"><BsPlusLg /></span>
-          Mitchell Christian Assembly
+          Covenant Reformed Church
         </BSNavbar.Brand>
         <BSNavbar.Toggle aria-controls="main-nav" />
         <BSNavbar.Collapse id="main-nav">

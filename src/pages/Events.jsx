@@ -23,7 +23,7 @@ export default function Events() {
       <section className="page-header">
         <Container>
           <h1>Events</h1>
-          <p>Stay connected with what&apos;s happening at Mitchell Christian Assembly.</p>
+          <p>Stay connected with what&apos;s happening at Covenant Reformed Church.</p>
         </Container>
       </section>
 

@@ -1,5 +1,5 @@
 const OWNER = process.env.GITHUB_REPO_OWNER || 'uphilltech4'
-const REPO = process.env.GITHUB_REPO_NAME || 'church-mcassembly'
+const REPO = process.env.GITHUB_REPO_NAME || 'church-covreform'
 const BRANCH = process.env.GITHUB_BRANCH || 'main'
 
 const VALID_COLLECTIONS = ['events', 'staff', 'ministries', 'content', 'services', 'sermons']

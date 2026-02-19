@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "title": "Breaking of Bread",
+    "title": "Sunday School",
     "date": "2026-02-22",
-    "time": "10:00 AM",
-    "location": "Mitchell Christian Assembly",
-    "category": "Worship",
+    "time": "9:30 AM",
+    "location": "Covenant Reformed Church",
+    "category": "Teaching",
     "status": "active",
-    "description": "A time of worship and remembrance of the Lord Jesus Christ."
+    "description": "Classes for K-Adult start at 9:30 in the sanctuary."
   },
   {
     "id": 2,
-    "title": "Bible Teaching & Sunday School",
+    "title": "Sunday Worship Service",
     "date": "2026-02-22",
-    "time": "11:30 AM",
-    "location": "Mitchell Christian Assembly",
-    "category": "Teaching",
+    "time": "10:30 AM",
+    "location": "Covenant Reformed Church",
+    "category": "Worship",
     "status": "active",
-    "description": "Bible teaching for all ages. Something for everyone."
+    "description": "Corporate worship with expository preaching from God's Word."
   },
   {
     "id": 3,
-    "title": "Gospel Hour",
-    "date": "2026-02-22",
+    "title": "Men's Theology",
+    "date": "2026-02-24",
     "time": "7:00 PM",
-    "location": "Mitchell Christian Assembly",
-    "category": "Gospel",
-    "status": "active",
-    "description": "Public speaking style gospel meetings. All are welcome. No collection will be taken."
+    "location": "Covenant Reformed Church",
+    "category": "Study",
+    "status": "upcoming",
+    "description": "An evening of fellowship and theological discussion. Alternate Tuesdays."
   },
   {
     "id": 4,
-    "title": "Bible Study & Prayer",
-    "date": "2026-02-25",
-    "time": "7:30 PM",
-    "location": "Mitchell Christian Assembly",
-    "category": "Study",
+    "title": "Youth Night",
+    "date": "2026-02-26",
+    "time": "7:00 PM",
+    "location": "Covenant Reformed Church",
+    "category": "Youth",
     "status": "upcoming",
-    "description": "Midweek Bible study and prayer meeting."
+    "description": "Grades 7-12 are invited for games, snacks, and Bible study. Alternate Thursdays."
   },
   {
     "id": 5,
     "title": "Easter Celebration",
     "date": "2026-04-05",
-    "time": "10:00 AM",
-    "location": "Mitchell Christian Assembly",
+    "time": "10:30 AM",
+    "location": "Covenant Reformed Church",
     "category": "Special",
     "status": "upcoming",
-    "description": "Celebrate the resurrection of Christ with the Mitchell Christian Assembly family."
+    "description": "Celebrate the resurrection of Christ with the Covenant Reformed Church family."
   }
 ]

@@ -4,10 +4,10 @@
     "name": "Home Page",
     "slug": "/",
     "status": "active",
-    "heroTitle": "But God demonstrates His own love toward us, in that while we were still sinners, Christ died for us.",
-    "heroSubtitle": "Welcome to Mitchell Christian Assembly",
-    "heroText": "We are a group of Christians who simply gather in the name of the Lord Jesus Christ. Come and hear about the Jesus of the Bible.",
-    "lastUpdated": "Feb 18, 2026"
+    "heroTitle": "We are a congregation of sinners saved by God's sovereign grace who are committed to the Bible, discipleship and the gospel.",
+    "heroSubtitle": "Welcome to Covenant Reformed Church",
+    "heroText": "We are committed to the principles of Reformed theology which we believe to be the best expression of the Bible, discipleship and the gospel.",
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 2,
@@ -15,9 +15,9 @@
     "slug": "/about",
     "status": "active",
     "heroTitle": "Who We Are",
-    "heroSubtitle": "Learn more about our assembly",
-    "heroText": "We are a company of Christians from many backgrounds, cultures, nationalities and many walks of life with one essential theme in common — we have all come to know God's Son, the Lord Jesus Christ, as our own personal Saviour and Lord.",
-    "lastUpdated": "Feb 18, 2026"
+    "heroSubtitle": "Learn more about our church",
+    "heroText": "We are a credo-baptist congregation committed to the principles of Reformed covenantal theology. Our foundation is the Bible, our desire is to see discipleship happen for every person and we seek to elevate the gospel in all areas as our only hope of salvation.",
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 3,
@@ -26,8 +26,8 @@
     "status": "active",
     "heroTitle": "Our Ministries",
     "heroSubtitle": "Get Involved",
-    "heroText": "At Mitchell Christian Assembly we believe in making a difference for Christ through gospel meetings, Bible studies, and Sunday School.",
-    "lastUpdated": "Feb 18, 2026"
+    "heroText": "At Covenant Reformed Church we offer Sunday School, Men's Theology, Ladies Bible Study, and Youth programs for growing in faith together.",
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 4,
@@ -36,18 +36,18 @@
     "status": "active",
     "heroTitle": "Events & Calendar",
     "heroSubtitle": "What's Happening",
-    "heroText": "Stay connected with what's happening at Mitchell Christian Assembly.",
-    "lastUpdated": "Feb 18, 2026"
+    "heroText": "Stay connected with what's happening at Covenant Reformed Church.",
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 5,
     "name": "Online Services",
     "slug": "/online-services",
     "status": "active",
-    "heroTitle": "Audio Downloads",
-    "heroSubtitle": "Listen Online",
-    "heroText": "Listen to sermons and Bible teaching from Mitchell Christian Assembly.",
-    "lastUpdated": "Feb 18, 2026"
+    "heroTitle": "Sermons",
+    "heroSubtitle": "Watch & Listen Online",
+    "heroText": "Watch and listen to sermons and Bible teaching from Covenant Reformed Church on YouTube and SoundCloud.",
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "heroTitle": "Giving",
     "heroSubtitle": "Support Our Mission",
     "heroText": "Your generosity makes ministry possible.",
-    "lastUpdated": "Feb 18, 2026"
+    "lastUpdated": "Feb 19, 2026"
   },
   {
     "id": 7,
@@ -67,6 +67,6 @@
     "heroTitle": "Contact Us",
     "heroSubtitle": "Get In Touch",
     "heroText": "We'd love to hear from you. Reach out anytime!",
-    "lastUpdated": "Feb 18, 2026"
+    "lastUpdated": "Feb 19, 2026"
   }
 ]

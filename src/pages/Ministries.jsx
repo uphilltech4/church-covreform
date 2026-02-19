@@ -29,7 +29,7 @@ export default function Ministries() {
       <section className="page-header">
         <Container>
           <h1>Ministries</h1>
-          <p>Discover how you can grow, serve, and connect at Mitchell Christian Assembly.</p>
+          <p>Discover how you can grow, serve, and connect at Covenant Reformed Church.</p>
         </Container>
       </section>
 

@@ -2,33 +2,33 @@
   {
     "id": 1,
     "name": "Sunday School",
-    "leader": "Assembly Leadership",
+    "leader": "Church Leadership",
     "status": "active",
-    "description": "Class-style Sunday School with something for all ages. Join us as we learn from God's Word.",
-    "schedule": "Sundays 11:30 AM - 12:30 PM"
+    "description": "Classes for K-Adult start at 9:30 in the sanctuary. Something for all ages to grow in God's Word.",
+    "schedule": "Sundays 9:30 AM"
   },
   {
     "id": 2,
-    "name": "Gospel Meetings",
-    "leader": "Assembly Leadership",
+    "name": "Men's Theology",
+    "leader": "Church Leadership",
     "status": "active",
-    "description": "Public speaking style gospel meetings where the plain and simple Gospel is preached. All are welcome.",
-    "schedule": "Sundays at 7:00 PM"
+    "description": "An evening of fellowship and discussion. Men gather to study theology together.",
+    "schedule": "Alternate Tuesdays"
   },
   {
     "id": 3,
-    "name": "Bible Study & Prayer",
-    "leader": "Assembly Leadership",
+    "name": "Ladies Bible Study",
+    "leader": "Church Leadership",
     "status": "active",
-    "description": "Midweek Bible study and prayer meeting. Come grow in your knowledge of God's Word and fellowship with other believers.",
-    "schedule": "Wednesdays 7:30 PM - 8:45 PM"
+    "description": "All women are welcome to come for evenings of fellowship and study. A time of community and growing in the Word.",
+    "schedule": "Alternate Tuesdays"
   },
   {
     "id": 4,
-    "name": "Missionary Support",
-    "leader": "Assembly Leadership",
+    "name": "Youth",
+    "leader": "Church Leadership",
     "status": "active",
-    "description": "Supporting missionaries who share the Gospel through literature distribution, gospel meetings, special outreaches, and teaching new believers through home Bible studies.",
-    "schedule": "Ongoing"
+    "description": "Grades 7-12 are invited to come for an evening of games, snacks, and Bible study.",
+    "schedule": "Alternate Thursdays"
   }
 ]

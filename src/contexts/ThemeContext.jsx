@@ -3,7 +3,7 @@ import { settingsAPI } from '../services/api'
 
 const ThemeContext = createContext()
 
-const THEME_KEY = 'mcassembly_color_theme'
+const THEME_KEY = 'covreform_color_theme'
 
 export const COLOR_THEMES = {
   blue: {

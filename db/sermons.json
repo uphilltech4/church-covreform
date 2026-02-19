@@ -1,27 +1,63 @@
 [
   {
     "id": 1,
-    "title": "Gospel Meeting - Romans 5:8",
+    "title": "Hallowed Be Thy Name",
     "date": "2026-02-15",
-    "speaker": "Guest Speaker",
+    "speaker": "Stu Reimer",
     "videoUrl": "",
     "featured": true,
     "status": "published"
   },
   {
     "id": 2,
-    "title": "Bible Teaching - The Way, the Truth, and the Life",
+    "title": "Walk in the Light",
     "date": "2026-02-08",
-    "speaker": "Guest Speaker",
+    "speaker": "Levi Wiebe",
     "videoUrl": "",
     "featured": false,
     "status": "published"
   },
   {
     "id": 3,
-    "title": "Gospel Meeting - John 3:16",
+    "title": "Sodom and Gomorrah... Part 2",
     "date": "2026-02-01",
-    "speaker": "Guest Speaker",
+    "speaker": "Dr. Rev. Jared Hiebert",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "title": "Beware of False Religion",
+    "date": "2026-01-25",
+    "speaker": "Dr. Rev. Jared Hiebert",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 5,
+    "title": "Bringing Down the House",
+    "date": "2026-01-18",
+    "speaker": "Dr. Rev. Jared Hiebert",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 6,
+    "title": "The Enigma That is Samson",
+    "date": "2026-01-11",
+    "speaker": "Dr. Rev. Jared Hiebert",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 7,
+    "title": "The Birth of Samson",
+    "date": "2026-01-04",
+    "speaker": "Dr. Rev. Jared Hiebert",
     "videoUrl": "",
     "featured": false,
     "status": "published"

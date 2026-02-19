@@ -54,7 +54,7 @@ export default function Giving() {
               Tax Receipts
             </h4>
             <p style={{ maxWidth: 600, margin: '0 auto' }}>
-              As a registered charitable organization, Mitchell Christian Assembly issues 
+              As a registered charitable organization, Covenant Reformed Church issues 
               tax receipts for all eligible donations. Receipts are mailed out annually 
               in February for the previous year&apos;s giving.
             </p>

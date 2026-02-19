@@ -18,7 +18,7 @@ export default function About() {
       <section className="page-header">
         <Container>
           <h1>About Us</h1>
-          <p>Mitchell Christian Assembly is a group of Christians who simply gather in the name of the Lord Jesus Christ.</p>
+          <p>We are a credo-baptist congregation committed to the principles of Reformed covenantal theology.</p>
         </Container>
       </section>
 
@@ -32,36 +32,37 @@ export default function About() {
                   src="/images/about/community.jpg" 
                   alt="Church community"
                 />
-                <div className="about-badge">Mitchell, MB</div>
+                <div className="about-badge">Steinbach, MB</div>
               </div>
             </Col>
             <Col lg={6}>
               <div className="about-content">
                 <div className="section-label">Who We Are</div>
-                <h2>Reaching Up and Moving Out</h2>
+                <h2>Committed to Reformed Covenantal Theology</h2>
                 <p>
-                  We are a company of Christians from many backgrounds, cultures, nationalities and many walks of life
-                  who simply gather in the name of the Lord Jesus Christ.
+                  We are a growing demographically diverse congregation committed to the principles of Reformed
+                  covenantal theology. Our foundation is the Bible, our desire is to see discipleship happen for
+                  every person and we seek to elevate the gospel in all areas as our only hope of salvation.
                 </p>
                 <h5 style={{ fontFamily: 'var(--font-heading)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-                  Who is our God?
+                  What We Believe
                 </h5>
                 <ul className="about-list">
                   <li>
                     <span className="check-icon"><BsStar /></span>
-                    We believe in the one God, Jehovah creator of heaven and earth
+                    The Bible is the written word of God, inspired by the Holy Spirit and without error
                   </li>
                   <li>
                     <span className="check-icon"><BsBook /></span>
-                    He gave us eternal life through the sacrifice of His son Jesus Christ
+                    Salvation is by God&apos;s grace alone, through faith alone, in Jesus Christ alone
                   </li>
                   <li>
                     <span className="check-icon"><BsHeart /></span>
-                    He works through us with the Holy Spirit
+                    God sovereignly chooses whom He will save based solely on His grace
                   </li>
                   <li>
                     <span className="check-icon"><BsPeople /></span>
-                    He offers us the incredible gift of eternal life
+                    The church is the covenant community of God where His grace is available to all
                   </li>
                 </ul>
               </div>

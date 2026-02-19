@@ -15,10 +15,10 @@ export default function Contact() {
   }, [])
 
   const contactInfo = [
-    { icon: <BsGeoAlt />, label: 'Address', value: settings?.address || 'Mitchell, MB R0G 1L0' },
-    { icon: <BsEnvelope />, label: 'Email', value: settings?.email || '' },
-    { icon: <BsTelephone />, label: 'Phone', value: settings?.phone || '204-434-6829 ext 1' },
-    { icon: <BsClock />, label: 'Office Hours', value: settings?.officeHours || 'Mon — Fri: 8:00 AM — 12:00 PM' },
+    { icon: <BsGeoAlt />, label: 'Address', value: settings?.address || '#30061 RD 32N Ridge Road, Mitchell, MB R5G 2P7' },
+    { icon: <BsEnvelope />, label: 'Email', value: settings?.email || 'info@covreformedchurch.org' },
+    { icon: <BsTelephone />, label: 'Phone', value: settings?.phone || '' },
+    { icon: <BsClock />, label: 'Office Hours', value: settings?.officeHours || '' },
   ]
 
   const handleSubmit = (e) => {
@@ -130,7 +130,7 @@ export default function Contact() {
               <div style={{ background: 'white', borderRadius: 20, padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
                 <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Find Us</h5>
                 <div style={{ background: '#f0f0f0', borderRadius: 12, height: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-light)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                  <BsGeoAlt className="me-2" /> {settings?.address || 'Mitchell, MB R0G 1L0'}
+                  <BsGeoAlt className="me-2" /> {settings?.address || '#30061 RD 32N Ridge Road, Mitchell, MB R5G 2P7'}
                 </div>
                 <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1rem' }}>Connect Online</h5>
                 <div className="d-flex gap-2 flex-column">

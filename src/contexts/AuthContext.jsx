@@ -5,10 +5,10 @@ const AuthContext = createContext(null)
 
 // Default admin credentials
 const DEFAULT_USERNAME = 'admin'
-const DEFAULT_PASSWORD = 'mcassembly2026'
+const DEFAULT_PASSWORD = 'covreform2026'
 
-const STORAGE_KEY = 'mcassembly_admin_user'
-const PASSWORD_KEY = 'mcassembly_admin_password'
+const STORAGE_KEY = 'covreform_admin_user'
+const PASSWORD_KEY = 'covreform_admin_password'
 
 function getStoredPassword() {
   return localStorage.getItem(PASSWORD_KEY) || DEFAULT_PASSWORD

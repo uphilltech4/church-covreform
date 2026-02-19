@@ -50,12 +50,12 @@ export default function Home() {
           <Row className="align-items-center">
             <Col lg={7}>
               <div className="hero-content">
-                <div className="hero-subtitle">Welcome to Mitchell Christian Assembly</div>
+                <div className="hero-subtitle">Welcome to Covenant Reformed Church</div>
                 <h1 className="hero-title">
                   <span className="highlight">&ldquo;Come to me,</span> all you who are weary and burdened and I will give you rest&rdquo;
                 </h1>
                 <p className="hero-text">
-                  {settings?.tagline || 'Reaching Up and Moving Out — reaching to God for our direction and moving to connect with others.'}{' '}
+                  {settings?.tagline || 'A congregation committed to the Bible, discipleship and the gospel, and to the principles of Reformed theology.'}{' '}
                   — Matthew 11:28
                 </p>
                 <div className="hero-buttons">
@@ -104,14 +104,14 @@ export default function Home() {
             <Col lg={6}>
               <div className="about-content">
                 <div className="section-label">Our Mission</div>
-                <h2>Reaching Up and Moving Out</h2>
+                <h2>Committed to the Bible, Discipleship and the Gospel</h2>
                 <p>
-                  Mitchell Christian Assembly is a group of Christians who gather in the name of the Lord Jesus Christ.
+                  Covenant Reformed Church is a congregation of sinners saved by God's sovereign grace, committed to the principles of Reformed theology.
                 </p>
                 <ul className="about-list">
                   <li>
                     <span className="check-icon"><BsStar /></span>
-                    Reaching up to God for direction
+                    Committed to the authority of the Bible
                   </li>
                   <li>
                     <span className="check-icon"><BsBook /></span>
@@ -119,11 +119,11 @@ export default function Home() {
                   </li>
                   <li>
                     <span className="check-icon"><BsHeart /></span>
-                    Loving God and loving people
+                    Saved by God&apos;s sovereign grace
                   </li>
                   <li>
                     <span className="check-icon"><BsPeople /></span>
-                    Moving out to serve our community
+                    Come as you are — all are welcome
                   </li>
                 </ul>
                 <Button as={Link} to="/about" className="btn-hero-primary mt-3">
@@ -142,7 +142,7 @@ export default function Home() {
             <div className="section-label">Get Involved</div>
             <h2 className="section-title">Our Ministries</h2>
             <p className="section-description">
-              There&apos;s a place for everyone at Mitchell Christian Assembly. Discover how you can grow, serve, and connect.
+              There&apos;s a place for everyone at Covenant Reformed Church. Discover how you can grow, serve, and connect.
             </p>
           </div>
           <Row className="g-4">
@@ -262,7 +262,7 @@ export default function Home() {
           <h2 style={{ color: 'white', marginBottom: '1.2rem' }}>You Are Welcome Here</h2>
           <p style={{ maxWidth: 600, margin: '0 auto 2rem', color: 'rgba(255,255,255,0.75)' }}>
             Whether you&apos;re new to faith or have been walking with God for years, there&apos;s 
-            a place for you at {settings?.churchName || 'Mitchell Christian Assembly'}. Come as you are and experience the 
+            a place for you at {settings?.churchName || 'Covenant Reformed Church'}. Come as you are and experience the 
             warmth of our church family.
           </p>
           <div className="d-flex gap-3 justify-content-center flex-wrap">

@@ -1,16 +1,16 @@
-# Mitchell Christian Assembly
+# Covenant Reformed Church
 
-Church website for **Mitchell Christian Assembly** in Mitchell, Manitoba. Built with React, Vite, and Bootstrap.
+Church website for **Covenant Reformed Church** in Steinbach, Manitoba. Built with React, Vite, and Bootstrap.
 
 ## Features
 
 - **Home** – Hero section with scripture (Romans 5:8), service times, upcoming events, ministries overview, and giving CTA
 - **Events** – Upcoming events carousel and monthly calendar
-- **Ministries** – Sunday School, Gospel Meetings, Bible Study & Prayer, Missionary Support
-- **Audio Downloads** – Sermon and Bible teaching recordings
-- **About** – Assembly history, beliefs, and missionary info
+- **Ministries** – Sunday School, Men's Theology, Ladies Bible Study, Youth
+- **Sermons** – Sermon recordings and Bible teaching
+- **About** – Church history, beliefs, and staff info
 - **Giving** – Information and links for donations
-- **Contact** – Contact form and assembly location (Mitchell, MB)
+- **Contact** – Contact form and church location (Steinbach, MB)
 - **Admin Panel** – Protected dashboard to manage events, ministries, sermons, services, staff, content, site settings, and 9 selectable color themes
 
 ## Tech Stack

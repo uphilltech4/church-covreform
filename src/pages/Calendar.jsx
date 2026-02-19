@@ -18,7 +18,7 @@ export default function Calendar() {
       <section className="page-header">
         <Container>
           <h1>Church Calendar</h1>
-          <p>View all upcoming services, events, and activities at Mitchell Christian Assembly.</p>
+          <p>View all upcoming services, events, and activities at Covenant Reformed Church.</p>
         </Container>
       </section>
 
@@ -28,7 +28,7 @@ export default function Calendar() {
             <div className="section-label">Monthly Calendar</div>
             <h2 className="section-title">What&apos;s Coming Up</h2>
             <p className="section-description">
-              Stay up to date with everything happening at Mitchell Christian Assembly throughout the month.
+              Stay up to date with everything happening at Covenant Reformed Church throughout the month.
             </p>
           </div>
           <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 120px)', minHeight: 600 }}>

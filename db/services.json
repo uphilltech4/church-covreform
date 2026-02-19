@@ -1,34 +1,42 @@
 [
   {
     "id": 1,
-    "name": "Breaking of Bread",
+    "name": "Sunday School",
     "day": "Sunday",
-    "time": "10:00 AM - 11:00 AM",
-    "description": "A time of worship and remembrance of the Lord Jesus Christ.",
+    "time": "9:30 AM - 10:15 AM",
+    "description": "Classes for K-Adult in the sanctuary. Growing in God's Word together.",
     "status": "active"
   },
   {
     "id": 2,
-    "name": "Bible Teaching & Sunday School",
+    "name": "Sunday Worship Service",
     "day": "Sunday",
-    "time": "11:30 AM - 12:30 PM",
-    "description": "Bible teaching for all ages. Coffee break from 11:00 AM to 11:30 AM.",
+    "time": "10:30 AM - 12:00 PM",
+    "description": "Corporate worship with expository preaching from God's Word.",
     "status": "active"
   },
   {
     "id": 3,
-    "name": "Gospel Hour",
-    "day": "Sunday",
-    "time": "7:00 PM - 8:00 PM",
-    "description": "Public speaking style gospel meetings. All are welcome.",
+    "name": "Men's Theology",
+    "day": "Tuesday",
+    "time": "Evening (Alternate Weeks)",
+    "description": "An evening of fellowship and discussion. Meetings take place alternate Tuesdays at the church.",
     "status": "active"
   },
   {
     "id": 4,
-    "name": "Bible Study & Prayer",
-    "day": "Wednesday",
-    "time": "7:30 PM - 8:45 PM",
-    "description": "Midweek Bible study and prayer meeting.",
+    "name": "Ladies Bible Study",
+    "day": "Tuesday",
+    "time": "Evening (Alternate Weeks)",
+    "description": "All women are welcome for evenings of fellowship and study. Meeting alternate Tuesdays at the church.",
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "name": "Youth",
+    "day": "Thursday",
+    "time": "Evening (Alternate Weeks)",
+    "description": "Grades 7-12 are invited for an evening of games, snacks, and Bible study. Meetings take place alternate Thursdays.",
     "status": "active"
   }
 ]
