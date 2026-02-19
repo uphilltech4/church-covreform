@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Home Page",
+    "slug": "/",
+    "status": "active",
+    "heroTitle": "Come to me, all you who are weary and burdened and I will give you rest",
+    "heroSubtitle": "Welcome to GALF",
+    "heroText": "Reaching Up and Moving Out — reaching to God for our direction and moving to connect with others in our community and beyond to exemplify His love.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 2,
+    "name": "About Us",
+    "slug": "/about",
+    "status": "active",
+    "heroTitle": "Who We Are",
+    "heroSubtitle": "Learn more about our church",
+    "heroText": "Abundant Life Fellowship is a non-denominational church with the desire to reach our community in practical ways.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 3,
+    "name": "Ministries",
+    "slug": "/ministries",
+    "status": "active",
+    "heroTitle": "Our Ministries",
+    "heroSubtitle": "Get Involved",
+    "heroText": "At Grunthal Abundant Life Fellowship we believe in making a difference for Christ.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 4,
+    "name": "Events",
+    "slug": "/events",
+    "status": "active",
+    "heroTitle": "Events & Calendar",
+    "heroSubtitle": "What's Happening",
+    "heroText": "Stay connected with what's happening at Grunthal Abundant Life Fellowship.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 5,
+    "name": "Online Services",
+    "slug": "/online-services",
+    "status": "active",
+    "heroTitle": "Online Services",
+    "heroSubtitle": "Watch Online",
+    "heroText": "Can't make it in person? Join us online through our YouTube channel.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 6,
+    "name": "Giving",
+    "slug": "/giving",
+    "status": "active",
+    "heroTitle": "Giving",
+    "heroSubtitle": "Support Our Mission",
+    "heroText": "Your generosity makes ministry possible.",
+    "lastUpdated": "Feb 17, 2026"
+  },
+  {
+    "id": 7,
+    "name": "Contact",
+    "slug": "/contact",
+    "status": "active",
+    "heroTitle": "Contact Us",
+    "heroSubtitle": "Get In Touch",
+    "heroText": "We'd love to hear from you. Reach out anytime!",
+    "lastUpdated": "Feb 17, 2026"
+  }
+]

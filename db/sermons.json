@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Gospel Meeting - Romans 5:8",
+    "date": "2026-02-15",
+    "speaker": "Guest Speaker",
+    "videoUrl": "",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "title": "Bible Teaching - The Way, the Truth, and the Life",
+    "date": "2026-02-08",
+    "speaker": "Guest Speaker",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "title": "Gospel Meeting - John 3:16",
+    "date": "2026-02-01",
+    "speaker": "Guest Speaker",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  }
+]

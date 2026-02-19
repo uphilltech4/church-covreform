@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Breaking of Bread",
+    "date": "2026-02-22",
+    "time": "10:00 AM",
+    "location": "Mitchell Christian Assembly",
+    "category": "Worship",
+    "status": "active",
+    "description": "A time of worship and remembrance of the Lord Jesus Christ."
+  },
+  {
+    "id": 2,
+    "title": "Bible Teaching & Sunday School",
+    "date": "2026-02-22",
+    "time": "11:30 AM",
+    "location": "Mitchell Christian Assembly",
+    "category": "Teaching",
+    "status": "active",
+    "description": "Bible teaching for all ages. Something for everyone."
+  },
+  {
+    "id": 3,
+    "title": "Gospel Hour",
+    "date": "2026-02-22",
+    "time": "7:00 PM",
+    "location": "Mitchell Christian Assembly",
+    "category": "Gospel",
+    "status": "active",
+    "description": "Public speaking style gospel meetings. All are welcome. No collection will be taken."
+  },
+  {
+    "id": 4,
+    "title": "Bible Study & Prayer",
+    "date": "2026-02-25",
+    "time": "7:30 PM",
+    "location": "Mitchell Christian Assembly",
+    "category": "Study",
+    "status": "upcoming",
+    "description": "Midweek Bible study and prayer meeting."
+  },
+  {
+    "id": 5,
+    "title": "Easter Celebration",
+    "date": "2026-04-05",
+    "time": "10:00 AM",
+    "location": "Mitchell Christian Assembly",
+    "category": "Special",
+    "status": "upcoming",
+    "description": "Celebrate the resurrection of Christ with the Mitchell Christian Assembly family."
+  }
+]

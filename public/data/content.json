@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Home Page",
+    "slug": "/",
+    "status": "active",
+    "heroTitle": "But God demonstrates His own love toward us, in that while we were still sinners, Christ died for us.",
+    "heroSubtitle": "Welcome to Mitchell Christian Assembly",
+    "heroText": "We are a group of Christians who simply gather in the name of the Lord Jesus Christ. Come and hear about the Jesus of the Bible.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 2,
+    "name": "About Us",
+    "slug": "/about",
+    "status": "active",
+    "heroTitle": "Who We Are",
+    "heroSubtitle": "Learn more about our assembly",
+    "heroText": "We are a company of Christians from many backgrounds, cultures, nationalities and many walks of life with one essential theme in common — we have all come to know God's Son, the Lord Jesus Christ, as our own personal Saviour and Lord.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 3,
+    "name": "Ministries",
+    "slug": "/ministries",
+    "status": "active",
+    "heroTitle": "Our Ministries",
+    "heroSubtitle": "Get Involved",
+    "heroText": "At Mitchell Christian Assembly we believe in making a difference for Christ through gospel meetings, Bible studies, and Sunday School.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 4,
+    "name": "Events",
+    "slug": "/events",
+    "status": "active",
+    "heroTitle": "Events & Calendar",
+    "heroSubtitle": "What's Happening",
+    "heroText": "Stay connected with what's happening at Mitchell Christian Assembly.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 5,
+    "name": "Online Services",
+    "slug": "/online-services",
+    "status": "active",
+    "heroTitle": "Audio Downloads",
+    "heroSubtitle": "Listen Online",
+    "heroText": "Listen to sermons and Bible teaching from Mitchell Christian Assembly.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 6,
+    "name": "Giving",
+    "slug": "/giving",
+    "status": "active",
+    "heroTitle": "Giving",
+    "heroSubtitle": "Support Our Mission",
+    "heroText": "Your generosity makes ministry possible.",
+    "lastUpdated": "Feb 18, 2026"
+  },
+  {
+    "id": 7,
+    "name": "Contact",
+    "slug": "/contact",
+    "status": "active",
+    "heroTitle": "Contact Us",
+    "heroSubtitle": "Get In Touch",
+    "heroText": "We'd love to hear from you. Reach out anytime!",
+    "lastUpdated": "Feb 18, 2026"
+  }
+]

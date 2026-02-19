@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Breaking of Bread",
+    "day": "Sunday",
+    "time": "10:00 AM - 11:00 AM",
+    "description": "A time of worship and remembrance of the Lord Jesus Christ.",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Bible Teaching & Sunday School",
+    "day": "Sunday",
+    "time": "11:30 AM - 12:30 PM",
+    "description": "Bible teaching for all ages. Coffee break from 11:00 AM to 11:30 AM.",
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Gospel Hour",
+    "day": "Sunday",
+    "time": "7:00 PM - 8:00 PM",
+    "description": "Public speaking style gospel meetings. All are welcome.",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "Bible Study & Prayer",
+    "day": "Wednesday",
+    "time": "7:30 PM - 8:45 PM",
+    "description": "Midweek Bible study and prayer meeting.",
+    "status": "active"
+  }
+]

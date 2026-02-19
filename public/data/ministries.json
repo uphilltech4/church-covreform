@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Sunday School",
+    "leader": "Assembly Leadership",
+    "status": "active",
+    "description": "Class-style Sunday School with something for all ages. Join us as we learn from God's Word.",
+    "schedule": "Sundays 11:30 AM - 12:30 PM"
+  },
+  {
+    "id": 2,
+    "name": "Gospel Meetings",
+    "leader": "Assembly Leadership",
+    "status": "active",
+    "description": "Public speaking style gospel meetings where the plain and simple Gospel is preached. All are welcome.",
+    "schedule": "Sundays at 7:00 PM"
+  },
+  {
+    "id": 3,
+    "name": "Bible Study & Prayer",
+    "leader": "Assembly Leadership",
+    "status": "active",
+    "description": "Midweek Bible study and prayer meeting. Come grow in your knowledge of God's Word and fellowship with other believers.",
+    "schedule": "Wednesdays 7:30 PM - 8:45 PM"
+  },
+  {
+    "id": 4,
+    "name": "Missionary Support",
+    "leader": "Assembly Leadership",
+    "status": "active",
+    "description": "Supporting missionaries who share the Gospel through literature distribution, gospel meetings, special outreaches, and teaching new believers through home Bible studies.",
+    "schedule": "Ongoing"
+  }
+]

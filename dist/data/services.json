@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Sunday Worship - Reaching Up and Moving Out",
+    "date": "2026-02-15",
+    "speaker": "Pastor Lorne",
+    "videoUrl": "",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "title": "Sunday Worship - Walking in Faith",
+    "date": "2026-02-08",
+    "speaker": "Pastor Lorne",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "title": "Sunday Worship - God's Love in Action",
+    "date": "2026-02-01",
+    "speaker": "Pastor Lorne",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "title": "Sunday Worship - Rest in Him",
+    "date": "2026-01-25",
+    "speaker": "Pastor Lorne",
+    "videoUrl": "",
+    "featured": false,
+    "status": "published"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Discoveryland Kids Church",
+    "leader": "Church Leadership",
+    "status": "active",
+    "description": "Join in the fun as we learn about God and His Word each week! For children age 3 to Grade 6, every Sunday at 9:30 AM (September through June).",
+    "schedule": "Sundays at 9:30 AM (Sept – June)"
+  },
+  {
+    "id": 2,
+    "name": "Community Groups",
+    "leader": "Pastor Lorne",
+    "status": "active",
+    "description": "Join us each week as we gather with friends to study God's Word. A time of connecting with others and growing in Christ. Contact Lorne @ 371-9514 for more info.",
+    "schedule": "Weekly gatherings"
+  },
+  {
+    "id": 3,
+    "name": "Junior Youth",
+    "leader": "Church Leadership",
+    "status": "active",
+    "description": "For grades 7-9. We have fun, worship, memorize scripture, talk about how God is changing our lives and serve our local community through food drives and local service projects.",
+    "schedule": "Mondays 7:30 – 9:00 PM"
+  },
+  {
+    "id": 4,
+    "name": "Senior Youth",
+    "leader": "Church Leadership",
+    "status": "active",
+    "description": "For grades 10-12. Meet weekly for Small Groups, Worship night, or Gym night. Come check it out!",
+    "schedule": "Mondays at 7:30 PM"
+  },
+  {
+    "id": 5,
+    "name": "Ladies Connect Bible Study",
+    "leader": "Church Leadership",
+    "status": "active",
+    "description": "Are you looking for a place to unwind over a cup of coffee with friends and discuss God's Word? Come out to our Friday morning Women's Bible Study.",
+    "schedule": "Fridays at 9:30 AM"
+  },
+  {
+    "id": 6,
+    "name": "Sonrise Servants - Men's Prayer",
+    "leader": "Dan",
+    "status": "active",
+    "description": "All men welcome! Come out each Friday to pray, encourage one another, and fellowship in the upstairs boardroom at GALF. Contact Dan @ 371-0124 for more info.",
+    "schedule": "Fridays at 6:00 AM"
+  },
+  {
+    "id": 7,
+    "name": "Outreach",
+    "leader": "George",
+    "status": "active",
+    "description": "We believe in making a difference at home and in our local cities through ministering at seniors' homes, helping the local food bank, and evangelism. Contact George @ 371-7544.",
+    "schedule": "Various times"
+  },
+  {
+    "id": 8,
+    "name": "Good News Daycare",
+    "leader": "Daycare Staff",
+    "status": "active",
+    "description": "Supporting families and nurturing children in God's Word. Contact goodnewsdaycare@gmail.com for more information.",
+    "schedule": "Mon – Fri (Contact for hours)"
+  },
+  {
+    "id": 9,
+    "name": "Grunthal Christian Preschool",
+    "leader": "Preschool Staff",
+    "status": "active",
+    "description": "Supporting families and nurturing children in God's Word through early childhood education.",
+    "schedule": "Contact church office for details"
+  }
+]

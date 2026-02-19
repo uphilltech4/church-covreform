@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Sunday Worship Service",
+    "date": "2026-02-22",
+    "time": "9:30 AM",
+    "location": "Main Sanctuary",
+    "category": "Worship",
+    "status": "active",
+    "description": "Join us for worship, prayer, and the Word. Prayer time begins at 8:45 AM."
+  },
+  {
+    "id": 2,
+    "title": "Discoveryland Kids Church",
+    "date": "2026-02-22",
+    "time": "9:30 AM",
+    "location": "Children's Area",
+    "category": "Children",
+    "status": "active",
+    "description": "Fun Bible-based program for children ages 3 through Grade 6."
+  },
+  {
+    "id": 3,
+    "title": "Junior Youth Night",
+    "date": "2026-02-23",
+    "time": "7:30 PM",
+    "location": "GALF Youth Room",
+    "category": "Youth",
+    "status": "upcoming",
+    "description": "Grades 7-9 gather for fun, worship, scripture memorization, and community service."
+  },
+  {
+    "id": 4,
+    "title": "Senior Youth Night",
+    "date": "2026-02-23",
+    "time": "7:30 PM",
+    "location": "GALF",
+    "category": "Youth",
+    "status": "upcoming",
+    "description": "Grades 10-12 meet for Small Groups, Worship night, or Gym night."
+  },
+  {
+    "id": 5,
+    "title": "Ladies Connect Bible Study",
+    "date": "2026-02-20",
+    "time": "9:30 AM",
+    "location": "GALF",
+    "category": "Women",
+    "status": "upcoming",
+    "description": "Women's Bible Study over coffee and fellowship."
+  },
+  {
+    "id": 6,
+    "title": "Sonrise Servants Men's Prayer",
+    "date": "2026-02-20",
+    "time": "6:00 AM",
+    "location": "Upstairs Boardroom",
+    "category": "Men",
+    "status": "upcoming",
+    "description": "Early morning prayer, encouragement, and fellowship for men."
+  },
+  {
+    "id": 7,
+    "title": "Community Group",
+    "date": "2026-02-25",
+    "time": "7:00 PM",
+    "location": "Various Homes",
+    "category": "Group",
+    "status": "upcoming",
+    "description": "Weekly small group gathering to study God's Word and connect with others."
+  },
+  {
+    "id": 8,
+    "title": "Easter Celebration",
+    "date": "2026-04-05",
+    "time": "9:30 AM",
+    "location": "Main Sanctuary",
+    "category": "Special",
+    "status": "upcoming",
+    "description": "Celebrate the resurrection of Christ with the GALF family."
+  }
+]

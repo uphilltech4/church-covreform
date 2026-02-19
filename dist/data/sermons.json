@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "title": "Reaching Up and Moving Out",
+    "series": "Life at GALF",
+    "speaker": "Pastor Lorne",
+    "date": "2026-02-15",
+    "scripture": "Matthew 11:28",
+    "description": "Come to me, all you who are weary and burdened and I will give you rest. Exploring what it means to reach up to God and move out in His love.",
+    "videoUrl": "",
+    "audioUrl": "",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "title": "Walking in Faith",
+    "series": "Life at GALF",
+    "speaker": "Pastor Lorne",
+    "date": "2026-02-08",
+    "scripture": "Hebrews 11:1-6",
+    "description": "Exploring what it means to live a life of faith in every season, reaching to God for our direction.",
+    "videoUrl": "",
+    "audioUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "title": "God's Love in Action",
+    "series": "Community and Service",
+    "speaker": "Pastor Lorne",
+    "date": "2026-02-01",
+    "scripture": "1 John 3:16-18",
+    "description": "Moving out to connect with others in our community and beyond to exemplify His love through acts of kindness.",
+    "videoUrl": "",
+    "audioUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "title": "Rest in Him",
+    "series": "Community and Service",
+    "speaker": "Pastor Lorne",
+    "date": "2026-01-25",
+    "scripture": "Psalm 46:10",
+    "description": "Finding rest and peace in God's presence even in the midst of life's challenges and busyness.",
+    "videoUrl": "",
+    "audioUrl": "",
+    "featured": false,
+    "status": "published"
+  }
+]
