@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     if (!sessionStorage.getItem('_tracked')) {
       sessionStorage.setItem('_tracked', '1')
-      fetch('https://site-tracker-uphilltech4.vercel.app/api/track', {
+      fetch('https://site-tracker-delta.vercel.app/api/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
