@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import PublicLayout from './layouts/PublicLayout'
 import AdminLayout from './layouts/AdminLayout'
@@ -27,6 +28,21 @@ function ProtectedRoute({ children }) {
 }
 
 function App() {
+  // Track visitor once per browser session
+  useEffect(() => {
+    if (!sessionStorage.getItem('_tracked')) {
+      sessionStorage.setItem('_tracked', '1')
+      fetch('/api/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          page: window.location.pathname,
+          referrer: document.referrer,
+        }),
+      }).catch(() => {})
+    }
+  }, [])
+
   return (
     <Routes>
       {/* Public Routes */}
