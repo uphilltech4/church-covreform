@@ -1157,6 +1157,206 @@ img { max-width: 100%; height: auto; }
   margin: 0;
   line-height: 1.5;
 }
+/* ========== GOSPEL EVENTS CARDS ========== */
+.ge-cards-wrapper {
+  position: relative;
+}
+.ge-scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  transition: background .2s, transform .2s;
+}
+.ge-scroll-arrow:hover {
+  background: var(--secondary);
+  transform: translateY(-50%) scale(1.1);
+}
+.ge-scroll-left { left: -18px; }
+.ge-scroll-right { right: -18px; }
+.ge-cards-scroll {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  scrollbar-width: none;
+}
+.ge-cards-scroll::-webkit-scrollbar {
+  display: none;
+}
+.ge-cards-scroll > .ge-event-card {
+  flex: 0 0 calc(25% - 0.9375rem);
+  scroll-snap-align: start;
+  min-height: 340px;
+}
+@media (max-width: 1200px) {
+  .ge-cards-scroll > .ge-event-card {
+    flex: 0 0 calc(33.333% - 0.84rem);
+  }
+}
+@media (max-width: 768px) {
+  .ge-cards-scroll > .ge-event-card {
+    flex: 0 0 calc(50% - 0.625rem);
+  }
+  .ge-scroll-left { left: -12px; }
+  .ge-scroll-right { right: -12px; }
+}
+@media (max-width: 480px) {
+  .ge-cards-scroll > .ge-event-card {
+    flex: 0 0 85%;
+  }
+}
+
+.ge-event-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ge-event-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.ge-event-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+.ge-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ge-event-date-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gradient-primary);
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  min-width: 50px;
+}
+.ge-event-date-overlay .day {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.ge-event-date-overlay .month {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.ge-event-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ge-event-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.ge-event-meta {
+  font-size: 0.82rem;
+  color: var(--text-medium);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.ge-event-location {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.ge-event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.ge-event-tag {
+  background: rgba(200,150,62,0.1) !important;
+  color: var(--secondary-dark) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 6px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ge-event-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 0.6rem;
+  transition: var(--transition);
+}
+.ge-event-link:hover {
+  color: var(--secondary);
+}
+
+.ge-event-actions {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+.ge-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.ge-details-btn:hover {
+  background: var(--secondary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 
 @media (max-width: 767px) {
   .calendar-cell {

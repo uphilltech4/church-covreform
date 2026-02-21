@@ -3,6 +3,7 @@ import { Row, Col, Form, Button } from 'react-bootstrap'
 import { BsCheck2, BsCheckCircleFill } from 'react-icons/bs'
 import { settingsAPI } from '../../services/api'
 import { useTheme, COLOR_THEMES } from '../../contexts/ThemeContext'
+import { KNOWN_ORGANIZATIONS } from '../../services/gospelEvents'
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState({
@@ -21,8 +22,7 @@ export default function AdminSettings() {
     kidsChurch: '',
     officeHours: '',
     affiliation: '',
-    eventsEmbedUrl: '',
-    calendarEmbedUrl: '',
+    gospelOrgId: '',
   })
   const [loading, setLoading] = useState(true)
   const [saved, setSaved] = useState(false)
@@ -177,68 +177,32 @@ export default function AdminSettings() {
           </Row>
         </div>
 
-        {/* Events Embed */}
+        {/* Gospel Events Organization */}
         <div className="admin-form-card mb-4">
-          <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Events Embed</h5>
-          <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Paste the full iframe URL for the events embed shown on the Events page.</p>
+          <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Gospel Events Organization</h5>
+          <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Select a church organization from My Gospel Events. The Events page and Calendar will only show events from this organization.</p>
           <Row className="g-3">
-            <Col xs={12}>
+            <Col md={8}>
               <Form.Group>
-                <Form.Label>Events Embed URL</Form.Label>
-                <Form.Control
-                  value={settings.eventsEmbedUrl || ''}
-                  onChange={(e) => handleChange('eventsEmbedUrl', e.target.value)}
-                  placeholder="https://api.mygospelevents.com/v1/embed/..."
-                />
-                <Form.Text className="text-muted">The iframe src URL for the embedded events calendar.</Form.Text>
+                <Form.Label>Organization</Form.Label>
+                <Form.Select
+                  value={settings.gospelOrgId || ''}
+                  onChange={(e) => handleChange('gospelOrgId', e.target.value ? Number(e.target.value) : '')}
+                >
+                  <option value="">All Organizations (no filter)</option>
+                  {KNOWN_ORGANIZATIONS.map(org => (
+                    <option key={org.id} value={org.id}>
+                      {org.name} — {org.city}, {org.state}
+                    </option>
+                  ))}
+                </Form.Select>
+                <Form.Text className="text-muted">Events and Calendar pages will load events only from the selected organization.</Form.Text>
               </Form.Group>
             </Col>
           </Row>
         </div>
 
-        {/* Calendar Embed */}
-        <div className="admin-form-card mb-4">
-          <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Calendar Embed</h5>
-          <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Paste the full iframe URL for the monthly calendar displayed below events on the Events page.</p>
-          <Row className="g-3">
-            <Col xs={12}>
-              <Form.Group>
-                <Form.Label>Calendar Embed URL</Form.Label>
-                <Form.Control
-                  value={settings.calendarEmbedUrl || ''}
-                  onChange={(e) => handleChange('calendarEmbedUrl', e.target.value)}
-                  placeholder="https://api.mygospelevents.com/v1/embed/calendar/..."
-                />
-                <Form.Text className="text-muted">The iframe src URL for the embedded monthly calendar view.</Form.Text>
-              </Form.Group>
-            </Col>
-          </Row>
-          {/* Calendar Preview */}
-          {settings.calendarEmbedUrl && (
-            <div style={{ marginTop: '1.5rem' }}>
-              <h6 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1rem' }}>Preview</h6>
-              <div style={{ position: 'relative', width: '100%', height: 400, minHeight: 300 }}>
-                <iframe
-                  src={settings.calendarEmbedUrl}
-                  title="Calendar Preview"
-                  scrolling="no"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 0,
-                    borderRadius: 8,
-                    overflow: 'hidden',
-                  }}
-                />
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Color Theme */}
+                {/* Color Theme */}
         <div className="admin-form-card mb-4">
           <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Color Theme</h5>
           <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Choose a color scheme for the website. Changes preview instantly.</p>

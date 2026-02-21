@@ -5,7 +5,7 @@ import AdminLayout from './layouts/AdminLayout'
 import Home from './pages/Home'
 import About from './pages/About'
 import Ministries from './pages/Ministries'
-import Events from './pages/Events'
+import GospelEvents from './pages/GospelEvents'
 import Giving from './pages/Giving'
 import Contact from './pages/Contact'
 import OnlineServices from './pages/OnlineServices'
@@ -51,7 +51,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/ministries" element={<Ministries />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/events" element={<GospelEvents />} />
         <Route path="/giving" element={<Giving />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/online-services" element={<OnlineServices />} />

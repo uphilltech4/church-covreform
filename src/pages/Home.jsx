@@ -1,17 +1,56 @@
-import { useState, useEffect } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { Container, Row, Col, Button, Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { 
   BsClock, BsBook, BsPeople, BsHeart, BsStar, 
-  BsArrowRight, BsCalendarEvent, BsMusicNote 
+  BsArrowRight, BsCalendarEvent, BsMusicNote,
+  BsGeoAlt, BsBoxArrowUpRight, BsChevronLeft, BsChevronRight,
 } from 'react-icons/bs'
 import { settingsAPI, ministriesAPI, eventsAPI, sermonsAPI } from '../services/api'
+import { getOrgEvents } from '../services/gospelEvents'
 
 export default function Home() {
   const [settings, setSettings] = useState(null)
   const [ministries, setMinistries] = useState([])
   const [events, setEvents] = useState([])
   const [sermons, setSermons] = useState([])
+  const [gospelEvents, setGospelEvents] = useState([])
+
+  // Scroll navigation for gospel events carousel
+  const scrollRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const checkScrollButtons = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 4)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }, [])
+
+  useEffect(() => {
+    checkScrollButtons()
+    const el = scrollRef.current
+    if (!el) return
+    el.addEventListener('scroll', checkScrollButtons, { passive: true })
+    window.addEventListener('resize', checkScrollButtons)
+    return () => {
+      el.removeEventListener('scroll', checkScrollButtons)
+      window.removeEventListener('resize', checkScrollButtons)
+    }
+  }, [gospelEvents, checkScrollButtons])
+
+  function scrollCards(dir) {
+    const el = scrollRef.current
+    if (!el) return
+    const card = el.querySelector('.ge-event-card')
+    const cardW = card ? card.offsetWidth + 20 : 300
+    el.scrollBy({ left: dir * cardW * 4, behavior: 'smooth' })
+  }
+
+  function formatTime(dt) {
+    return new Date(dt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+  }
 
   useEffect(() => {
     Promise.all([settingsAPI.get(), ministriesAPI.getAll(), eventsAPI.getAll(), sermonsAPI.getAll()])
@@ -30,6 +69,13 @@ export default function Home() {
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .slice(0, 3)
         setSermons(latest)
+
+        // Load gospel events if org is configured
+        if (s.gospelOrgId) {
+          getOrgEvents(s.gospelOrgId, 365)
+            .then(evts => setGospelEvents(evts))
+            .catch(() => {})
+        }
       })
       .catch(err => console.error('Failed to load home data:', err))
   }, [])
@@ -164,7 +210,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* EVENTS */}
+      {/* EVENTS — Gospel Events Carousel */}
+      {gospelEvents.length > 0 && (
       <section className="events-section section-padding">
         <Container>
           <div className="section-header">
@@ -174,30 +221,71 @@ export default function Home() {
               Stay connected and join us for worship, fellowship, and community.
             </p>
           </div>
-          <Row className="g-4">
-            {events.map((ev) => {
-              const d = new Date(ev.date + 'T00:00:00')
-              const day = d.getDate()
-              const month = d.toLocaleString('en-US', { month: 'short' })
-              return (
-                <Col md={6} lg={3} key={ev.id}>
-                  <div className="event-card fade-in-up">
-                    <div className="d-flex">
-                      <div className="event-date-badge">
-                        <div className="day">{day}</div>
-                        <div className="month">{month}</div>
+
+          <div className="ge-cards-wrapper">
+            {canScrollLeft && (
+              <button className="ge-scroll-arrow ge-scroll-left" onClick={() => scrollCards(-1)}>
+                <BsChevronLeft />
+              </button>
+            )}
+            {canScrollRight && (
+              <button className="ge-scroll-arrow ge-scroll-right" onClick={() => scrollCards(1)}>
+                <BsChevronRight />
+              </button>
+            )}
+            <div className="ge-cards-scroll" ref={scrollRef}>
+              {gospelEvents.map(ev => {
+                const start = new Date(ev.startDatetime)
+                const day = start.getDate()
+                const mon = start.toLocaleString('en-US', { month: 'short' })
+                return (
+                  <div className="ge-event-card fade-in-up" key={ev.id}>
+                    {ev.bannerThumbnailUrl && (
+                      <div className="ge-event-image">
+                        <img src={ev.bannerThumbnailUrl} alt={ev.title} loading="lazy" />
+                        <div className="ge-event-date-overlay">
+                          <div className="day">{day}</div>
+                          <div className="month">{mon}</div>
+                        </div>
                       </div>
-                      <div className="event-card-body">
-                        <h5>{ev.title}</h5>
-                        <div className="event-time"><BsClock className="me-1" /> {ev.time}</div>
-                        <span className="event-tag">{ev.category}</span>
+                    )}
+                    <div className="ge-event-body">
+                      <h5 className="ge-event-title">{ev.title}</h5>
+                      <div className="ge-event-meta">
+                        <span><BsClock className="me-1" />{formatTime(ev.startDatetime)} – {formatTime(ev.endDatetime)}</span>
+                      </div>
+                      {ev.localName && (
+                        <div className="ge-event-meta">
+                          <span><BsGeoAlt className="me-1" />{ev.localName}</span>
+                        </div>
+                      )}
+                      {ev.city && (
+                        <div className="ge-event-location">
+                          {ev.city}{ev.state ? `, ${ev.state}` : ''}
+                        </div>
+                      )}
+                      <div className="ge-event-tags">
+                        {ev.categories?.map(c => (
+                          <Badge key={c.id} className="ge-event-tag">{c.name}</Badge>
+                        ))}
+                      </div>
+                      <div className="ge-event-actions">
+                        <a
+                          href={`https://www.mygospelevents.com/events/detail/${ev.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ge-details-btn"
+                        >
+                          Details <BsBoxArrowUpRight className="ms-1" />
+                        </a>
                       </div>
                     </div>
                   </div>
-                </Col>
-              )
-            })}
-          </Row>
+                )
+              })}
+            </div>
+          </div>
+
           <div className="text-center mt-4">
             <Button as={Link} to="/events" variant="outline-dark" className="mt-3" style={{ borderRadius: 10, fontWeight: 600 }}>
               See All Events <BsCalendarEvent className="ms-2" />
@@ -205,6 +293,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      )}
 
       {/* SERMONS OF THE WEEK */}
       <section className="sermons-section section-padding">
