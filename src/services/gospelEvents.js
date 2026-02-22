@@ -42,8 +42,11 @@ function parseEmbedEvents(html) {
     const title = card.querySelector('.event-title')?.textContent?.trim() || ''
     const banner = card.querySelector('.event-banner img')
     const bannerUrl = banner?.getAttribute('src') || ''
-    // Extract event ID from thumbnail URL (/thumbnails/180.webp)
-    const idMatch = bannerUrl.match(/\/thumbnails\/(\d+)/)
+
+    // Extract event ID from view-btn detail URL (thumbnail IDs are image IDs, not event IDs)
+    const viewBtn = card.querySelector('.view-btn')
+    const viewUrl = viewBtn?.getAttribute('href') || ''
+    const idMatch = viewUrl.match(/\/detail\/(\d+)/)
     const id = idMatch ? parseInt(idMatch[1], 10) : idx + 1
 
     // Parse meta rows
@@ -74,10 +77,6 @@ function parseEmbedEvents(html) {
       cats.push({ id: cats.length + 1, name: chip.textContent.trim() })
     })
 
-    // External URL from view-btn
-    const viewBtn = card.querySelector('.view-btn')
-    const url = viewBtn?.getAttribute('href') || ''
-
     events.push({
       id,
       title,
@@ -89,8 +88,8 @@ function parseEmbedEvents(html) {
       city: '',
       state: '',
       categories: cats,
-      url,
-      isExternalEventUrl: !!url,
+      url: viewUrl,
+      isExternalEventUrl: !!viewUrl,
       organizationId: 0,
     })
   })
