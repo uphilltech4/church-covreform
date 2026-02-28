@@ -4,7 +4,7 @@ import {
   BsClock, BsGeoAlt, BsCalendarEvent, BsBoxArrowUpRight,
   BsChevronLeft, BsChevronRight,
 } from 'react-icons/bs'
-import { getUpcomingEvents, getOrgEvents, KNOWN_ORGANIZATIONS } from '../services/gospelEvents'
+import { getEmbedEvents, DEFAULT_EVENTS_EMBED_ID } from '../services/gospelEvents'
 import { settingsAPI } from '../services/api'
 
 const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -17,7 +17,6 @@ export default function GospelEvents() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [orgName, setOrgName] = useState('')
 
   // Calendar state
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -29,15 +28,8 @@ export default function GospelEvents() {
     async function load() {
       try {
         const siteSettings = await settingsAPI.get().catch(() => ({}))
-        const orgId = siteSettings.gospelOrgId
-        console.log('[GospelEvents] gospelOrgId from settings:', orgId)
-        if (orgId) {
-          const org = KNOWN_ORGANIZATIONS.find(o => o.id === Number(orgId))
-          if (org) setOrgName(org.name)
-        }
-        const evts = orgId
-          ? await getOrgEvents(orgId, 365)
-          : await getUpcomingEvents({ maxDays: 365 })
+        const embedId = siteSettings.eventsEmbedId || DEFAULT_EVENTS_EMBED_ID
+        const evts = await getEmbedEvents(embedId)
         setEvents(evts)
       } catch (err) {
         setError(err.message)
@@ -143,12 +135,7 @@ export default function GospelEvents() {
             <div className="text-center py-5">
               <BsCalendarEvent size={48} className="text-muted mb-3" />
               <h5>No upcoming events</h5>
-              <p className="text-muted">
-                {orgName
-                  ? <>No events found for <strong>{orgName}</strong>. This organization may not have any upcoming events listed.  Try selecting a different organization in Admin Settings.</>
-                  : 'Check back later for upcoming events.'
-                }
-              </p>
+              <p className="text-muted">Check back later for upcoming events.</p>
             </div>
           )}
 

@@ -6,8 +6,28 @@
 
 const BASE = 'https://api.mygospelevents.com'
 
+export const DEFAULT_EVENTS_EMBED_ID = '8500787f-e919-4fba-8b32-f90c05e666d5'
+export const DEFAULT_CALENDAR_EMBED_ID = '007d6708-c879-47f8-b10d-5c1e7834590f'
+
 const HEADERS = {
   Accept: 'application/json',
+}
+
+function normalizeEmbedId(value) {
+  if (!value) return ''
+  const raw = String(value).trim()
+  const match = raw.match(/\/v1\/embed\/([a-f0-9-]{36})/i)
+  return (match ? match[1] : raw).trim()
+}
+
+export function buildEventsEmbedUrl(embedId = DEFAULT_EVENTS_EMBED_ID) {
+  const normalized = normalizeEmbedId(embedId)
+  return `${BASE}/v1/embed/${normalized || DEFAULT_EVENTS_EMBED_ID}`
+}
+
+export function buildCalendarEmbedUrl(embedId = DEFAULT_CALENDAR_EMBED_ID) {
+  const normalized = normalizeEmbedId(embedId)
+  return `${BASE}/v1/embed/${normalized || DEFAULT_CALENDAR_EMBED_ID}`
 }
 
 async function apiFetch(path) {
@@ -112,6 +132,21 @@ export async function getOrgEvents(orgId, maxDays = 120) {
   console.log('[GospelEvents] Embed HTML length:', html.length)
   const events = parseEmbedEvents(html)
   console.log('[GospelEvents] Parsed', events.length, 'events for org', orgId)
+  return events
+}
+
+/**
+ * Fetch events from a direct embed UUID endpoint.
+ * @param {string} embedIdOrUrl - raw UUID or full /v1/embed/{uuid} URL
+ */
+export async function getEmbedEvents(embedIdOrUrl) {
+  const url = buildEventsEmbedUrl(embedIdOrUrl)
+  console.log('[GospelEvents] Fetching embed', url)
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`Embed ${res.status}: ${url}`)
+  const html = await res.text()
+  const events = parseEmbedEvents(html)
+  console.log('[GospelEvents] Parsed', events.length, 'events from embed ID')
   return events
 }
 

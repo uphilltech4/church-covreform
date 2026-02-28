@@ -14,5 +14,9 @@
   "officeHours": "",
   "affiliation": "Reformed",
   "colorTheme": "warm",
-  "mapCoordinates": "49.525, -96.685"
+  "mapCoordinates": "49.525, -96.685",
+  "eventsEmbedId": "8500787f-e919-4fba-8b32-f90c05e666d5",
+  "calendarEmbedId": "007d6708-c879-47f8-b10d-5c1e7834590f",
+  "eventsEmbedUrl": "https://api.mygospelevents.com/v1/embed/8500787f-e919-4fba-8b32-f90c05e666d5",
+  "calendarEmbedUrl": "https://api.mygospelevents.com/v1/embed/007d6708-c879-47f8-b10d-5c1e7834590f"
 }

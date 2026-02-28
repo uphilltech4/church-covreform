@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { settingsAPI } from '../services/api'
+import { DEFAULT_CALENDAR_EMBED_ID, buildCalendarEmbedUrl } from '../services/gospelEvents'
 
-const DEFAULT_EMBED = 'https://api.mygospelevents.com/v1/embed/calendar/month?organization_id=15&primary=%2300007A'
+const DEFAULT_EMBED = buildCalendarEmbedUrl(DEFAULT_CALENDAR_EMBED_ID)
 
 export default function Calendar() {
   const [embedUrl, setEmbedUrl] = useState(DEFAULT_EMBED)
 
   useEffect(() => {
     settingsAPI.get()
-      .then(data => { if (data.calendarEmbedUrl) setEmbedUrl(data.calendarEmbedUrl) })
+      .then(data => {
+        if (data.calendarEmbedId) {
+          setEmbedUrl(buildCalendarEmbedUrl(data.calendarEmbedId))
+        } else if (data.calendarEmbedUrl) {
+          setEmbedUrl(data.calendarEmbedUrl)
+        }
+      })
       .catch(() => {})
   }, [])
 

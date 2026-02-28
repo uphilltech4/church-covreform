@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import { BsCheck2 } from 'react-icons/bs'
 import { settingsAPI } from '../../services/api'
+import { DEFAULT_CALENDAR_EMBED_ID, buildCalendarEmbedUrl } from '../../services/gospelEvents'
+
+function extractEmbedId(value, fallback = '') {
+  if (!value) return fallback
+  const raw = String(value).trim()
+  const match = raw.match(/\/v1\/embed\/([a-f0-9-]{36})/i)
+  return (match ? match[1] : raw) || fallback
+}
 
 export default function AdminCalendar() {
   const [embedUrl, setEmbedUrl] = useState('')
@@ -10,7 +18,10 @@ export default function AdminCalendar() {
 
   useEffect(() => {
     settingsAPI.get()
-      .then(data => { if (data.calendarEmbedUrl) setEmbedUrl(data.calendarEmbedUrl) })
+      .then(data => {
+        if (data.calendarEmbedId) setEmbedUrl(buildCalendarEmbedUrl(data.calendarEmbedId))
+        else if (data.calendarEmbedUrl) setEmbedUrl(data.calendarEmbedUrl)
+      })
       .catch(err => console.error('Failed to load settings:', err))
       .finally(() => setLoading(false))
   }, [])
@@ -19,7 +30,12 @@ export default function AdminCalendar() {
     e.preventDefault()
     try {
       const current = await settingsAPI.get()
-      await settingsAPI.update({ ...current, calendarEmbedUrl: embedUrl })
+      const calendarEmbedId = extractEmbedId(embedUrl, DEFAULT_CALENDAR_EMBED_ID)
+      await settingsAPI.update({
+        ...current,
+        calendarEmbedId,
+        calendarEmbedUrl: buildCalendarEmbedUrl(calendarEmbedId),
+      })
       setSaved(true)
       setTimeout(() => setSaved(false), 3000)
     } catch (err) {

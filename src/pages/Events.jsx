@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { settingsAPI } from '../services/api'
+import {
+  DEFAULT_EVENTS_EMBED_ID,
+  DEFAULT_CALENDAR_EMBED_ID,
+  buildEventsEmbedUrl,
+  buildCalendarEmbedUrl,
+} from '../services/gospelEvents'
 
-const DEFAULT_EVENTS_EMBED = 'https://api.mygospelevents.com/v1/embed/public/events?org_ids=1%2C2%2C3%2C4%2C5%2C6&primary=%2300007A&max_days=120&show_organization_info=true&events_layout=carousel'
-const DEFAULT_CALENDAR_EMBED = 'https://api.mygospelevents.com/v1/embed/calendar/month?organization_id=15&primary=%2300007A'
+const DEFAULT_EVENTS_EMBED = buildEventsEmbedUrl(DEFAULT_EVENTS_EMBED_ID)
+const DEFAULT_CALENDAR_EMBED = buildCalendarEmbedUrl(DEFAULT_CALENDAR_EMBED_ID)
 
 export default function Events() {
   const [eventsUrl, setEventsUrl] = useState(DEFAULT_EVENTS_EMBED)
@@ -12,8 +18,11 @@ export default function Events() {
   useEffect(() => {
     settingsAPI.get()
       .then(data => {
-        if (data.eventsEmbedUrl) setEventsUrl(data.eventsEmbedUrl)
-        if (data.calendarEmbedUrl) setCalendarUrl(data.calendarEmbedUrl)
+        if (data.eventsEmbedId) setEventsUrl(buildEventsEmbedUrl(data.eventsEmbedId))
+        else if (data.eventsEmbedUrl) setEventsUrl(data.eventsEmbedUrl)
+
+        if (data.calendarEmbedId) setCalendarUrl(buildCalendarEmbedUrl(data.calendarEmbedId))
+        else if (data.calendarEmbedUrl) setCalendarUrl(data.calendarEmbedUrl)
       })
       .catch(() => {})
   }, [])

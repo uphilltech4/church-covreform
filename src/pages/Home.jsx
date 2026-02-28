@@ -7,7 +7,7 @@ import {
   BsGeoAlt, BsBoxArrowUpRight, BsChevronLeft, BsChevronRight,
 } from 'react-icons/bs'
 import { settingsAPI, ministriesAPI, eventsAPI, sermonsAPI } from '../services/api'
-import { getOrgEvents } from '../services/gospelEvents'
+import { getEmbedEvents, DEFAULT_EVENTS_EMBED_ID } from '../services/gospelEvents'
 
 export default function Home() {
   const [settings, setSettings] = useState(null)
@@ -70,12 +70,11 @@ export default function Home() {
           .slice(0, 3)
         setSermons(latest)
 
-        // Load gospel events if org is configured
-        if (s.gospelOrgId) {
-          getOrgEvents(s.gospelOrgId, 365)
-            .then(evts => setGospelEvents(evts))
-            .catch(() => {})
-        }
+        // Load gospel events from configured embed ID
+        const embedId = s.eventsEmbedId || DEFAULT_EVENTS_EMBED_ID
+        getEmbedEvents(embedId)
+          .then(evts => setGospelEvents(evts))
+          .catch(() => {})
       })
       .catch(err => console.error('Failed to load home data:', err))
   }, [])

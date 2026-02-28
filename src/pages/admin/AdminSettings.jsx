@@ -3,7 +3,19 @@ import { Row, Col, Form, Button } from 'react-bootstrap'
 import { BsCheck2, BsCheckCircleFill } from 'react-icons/bs'
 import { settingsAPI } from '../../services/api'
 import { useTheme, COLOR_THEMES } from '../../contexts/ThemeContext'
-import { KNOWN_ORGANIZATIONS } from '../../services/gospelEvents'
+import {
+  DEFAULT_EVENTS_EMBED_ID,
+  DEFAULT_CALENDAR_EMBED_ID,
+  buildEventsEmbedUrl,
+  buildCalendarEmbedUrl,
+} from '../../services/gospelEvents'
+
+function extractEmbedId(value, fallback = '') {
+  if (!value) return fallback
+  const raw = String(value).trim()
+  const match = raw.match(/\/v1\/embed\/([a-f0-9-]{36})/i)
+  return (match ? match[1] : raw) || fallback
+}
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState({
@@ -17,12 +29,10 @@ export default function AdminSettings() {
     sundaySchool: '',
     celebrationService: '',
     powerKids: '',
-    prayerTime: '',
-    worshipService: '',
-    kidsChurch: '',
     officeHours: '',
     affiliation: '',
-    gospelOrgId: '',
+    eventsEmbedId: DEFAULT_EVENTS_EMBED_ID,
+    calendarEmbedId: DEFAULT_CALENDAR_EMBED_ID,
   })
   const [loading, setLoading] = useState(true)
   const [saved, setSaved] = useState(false)
@@ -31,7 +41,11 @@ export default function AdminSettings() {
   useEffect(() => {
     settingsAPI.get()
       .then(data => {
-        setSettings(data)
+        setSettings({
+          ...data,
+          eventsEmbedId: extractEmbedId(data.eventsEmbedId || data.eventsEmbedUrl, DEFAULT_EVENTS_EMBED_ID),
+          calendarEmbedId: extractEmbedId(data.calendarEmbedId || data.calendarEmbedUrl, DEFAULT_CALENDAR_EMBED_ID),
+        })
         if (data.colorTheme) changeTheme(data.colorTheme)
       })
       .catch(err => console.error('Failed to load settings:', err))
@@ -46,7 +60,16 @@ export default function AdminSettings() {
   const handleSave = async (e) => {
     e.preventDefault()
     try {
-      await settingsAPI.update({ ...settings, colorTheme: theme })
+      const eventsEmbedId = extractEmbedId(settings.eventsEmbedId, DEFAULT_EVENTS_EMBED_ID)
+      const calendarEmbedId = extractEmbedId(settings.calendarEmbedId, DEFAULT_CALENDAR_EMBED_ID)
+      await settingsAPI.update({
+        ...settings,
+        colorTheme: theme,
+        eventsEmbedId,
+        calendarEmbedId,
+        eventsEmbedUrl: buildEventsEmbedUrl(eventsEmbedId),
+        calendarEmbedUrl: buildCalendarEmbedUrl(calendarEmbedId),
+      })
       setSaved(true)
       setTimeout(() => setSaved(false), 3000)
     } catch (err) {
@@ -158,51 +181,58 @@ export default function AdminSettings() {
           <Row className="g-3">
             <Col md={4}>
               <Form.Group>
-                <Form.Label>Prayer Time</Form.Label>
-                <Form.Control value={settings.prayerTime} onChange={(e) => handleChange('prayerTime', e.target.value)} />
+                <Form.Label>Sunday School</Form.Label>
+                <Form.Control value={settings.sundaySchool} onChange={(e) => handleChange('sundaySchool', e.target.value)} />
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group>
-                <Form.Label>Worship Service</Form.Label>
-                <Form.Control value={settings.worshipService} onChange={(e) => handleChange('worshipService', e.target.value)} />
+                <Form.Label>Celebration Service</Form.Label>
+                <Form.Control value={settings.celebrationService} onChange={(e) => handleChange('celebrationService', e.target.value)} />
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group>
-                <Form.Label>Kids Church (Discoveryland)</Form.Label>
-                <Form.Control value={settings.kidsChurch} onChange={(e) => handleChange('kidsChurch', e.target.value)} />
+                <Form.Label>Power Kids</Form.Label>
+                <Form.Control value={settings.powerKids} onChange={(e) => handleChange('powerKids', e.target.value)} />
               </Form.Group>
             </Col>
           </Row>
         </div>
 
-        {/* Gospel Events Organization */}
+        {/* Gospel Events Embed IDs */}
         <div className="admin-form-card mb-4">
-          <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Gospel Events Organization</h5>
-          <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Select a church organization from My Gospel Events. The Events page and Calendar will only show events from this organization.</p>
+          <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Gospel Events Embed IDs</h5>
+          <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>
+            Save only the last UUID portion from the embed links.
+          </p>
           <Row className="g-3">
-            <Col md={8}>
+            <Col md={6}>
               <Form.Group>
-                <Form.Label>Organization</Form.Label>
-                <Form.Select
-                  value={settings.gospelOrgId || ''}
-                  onChange={(e) => handleChange('gospelOrgId', e.target.value ? Number(e.target.value) : '')}
-                >
-                  <option value="">All Organizations (no filter)</option>
-                  {KNOWN_ORGANIZATIONS.map(org => (
-                    <option key={org.id} value={org.id}>
-                      {org.name} — {org.city}, {org.state}
-                    </option>
-                  ))}
-                </Form.Select>
-                <Form.Text className="text-muted">Events and Calendar pages will load events only from the selected organization.</Form.Text>
+                <Form.Label>Events Embed ID</Form.Label>
+                <Form.Control
+                  value={settings.eventsEmbedId || ''}
+                  onChange={(e) => handleChange('eventsEmbedId', extractEmbedId(e.target.value, ''))}
+                  placeholder={DEFAULT_EVENTS_EMBED_ID}
+                />
+                <Form.Text className="text-muted">From: https://api.mygospelevents.com/v1/embed/...</Form.Text>
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group>
+                <Form.Label>Calendar Embed ID</Form.Label>
+                <Form.Control
+                  value={settings.calendarEmbedId || ''}
+                  onChange={(e) => handleChange('calendarEmbedId', extractEmbedId(e.target.value, ''))}
+                  placeholder={DEFAULT_CALENDAR_EMBED_ID}
+                />
+                <Form.Text className="text-muted">From: https://api.mygospelevents.com/v1/embed/...</Form.Text>
               </Form.Group>
             </Col>
           </Row>
         </div>
 
-                {/* Color Theme */}
+        {/* Color Theme */}
         <div className="admin-form-card mb-4">
           <h5 style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Color Theme</h5>
           <p style={{ color: 'var(--text-medium)', fontSize: '0.88rem', marginBottom: '1.2rem' }}>Choose a color scheme for the website. Changes preview instantly.</p>
