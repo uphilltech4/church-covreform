@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { BsPlayCircle, BsFacebook, BsYoutube, BsCalendarEvent } from 'react-icons/bs'
-import { servicesAPI } from '../services/api'
+import { servicesAPI, settingsAPI } from '../services/api'
 
 function getYouTubeEmbed(url) {
   if (!url) return null
@@ -16,16 +16,21 @@ function formatDate(dateStr) {
 export default function OnlineServices() {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
+  const [settings, setSettings] = useState({})
 
   useEffect(() => {
     servicesAPI.getAll()
       .then(data => {
-        const published = data.filter(s => s.status === 'published')
+        const published = data.filter(s => s.status === 'published' || (s.videoUrl && s.status !== 'draft'))
         published.sort((a, b) => new Date(b.date) - new Date(a.date))
         setServices(published)
       })
       .catch(err => console.error('Failed to load services:', err))
       .finally(() => setLoading(false))
+
+    settingsAPI.get()
+      .then(data => setSettings(data))
+      .catch(() => {})
   }, [])
 
   const featured = services.find(s => s.featured) || services[0]
@@ -148,22 +153,31 @@ export default function OnlineServices() {
               Stay connected with us on social media for updates, encouragement, and live streams.
             </p>
             <div className="d-flex justify-content-center gap-3">
-              <a 
-                href="https://www.facebook.com/people/Christian-Life-Centre/100064390823405/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-outline-primary"
-                style={{ borderRadius: 10, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
-              >
-                <BsFacebook /> Facebook
-              </a>
-              <a 
-                href="#"
-                className="btn btn-outline-danger"
-                style={{ borderRadius: 10, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
-              >
-                <BsYoutube /> YouTube
-              </a>
+              {settings.facebook && (
+                <a
+                  href={settings.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary"
+                  style={{ borderRadius: 10, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                >
+                  <BsFacebook /> Facebook
+                </a>
+              )}
+              {settings.youtube && (
+                <a
+                  href={settings.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-danger"
+                  style={{ borderRadius: 10, fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                >
+                  <BsYoutube /> YouTube
+                </a>
+              )}
+              {!settings.facebook && !settings.youtube && (
+                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Social media links not yet configured.</p>
+              )}
             </div>
           </div>
         </Container>
