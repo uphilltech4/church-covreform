@@ -19,6 +19,7 @@ import AdminSermons from './pages/admin/AdminSermons'
 import AdminChangePassword from './pages/admin/AdminChangePassword'
 import AdminLogin from './pages/admin/AdminLogin'
 import { useAuth } from './contexts/AuthContext'
+import { settingsAPI } from './services/api'
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
@@ -43,6 +44,18 @@ function App() {
       }).catch(() => {})
     }
   }, [])
+  // Set page title from church settings
+  useEffect(() => {
+    settingsAPI.get()
+      .then(data => {
+        if (data.churchName) {
+          const city = data.address ? data.address.split(',').slice(-2).join(',').trim() : ''
+          document.title = city ? `${data.churchName} - ${city}` : data.churchName
+        }
+      })
+      .catch(() => {})
+  }, [])
+
 
   return (
     <Routes>
